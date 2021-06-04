@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Comment extends Model
+{
+    use HasFactory;
+    public $timestamps = false;
+    protected $table = "comments";
+
+    public function Plaatser() {
+        return $this->hasOne("\App\Models\User", "id", "plaatser_id");
+    }
+}
